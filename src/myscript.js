@@ -1,10 +1,10 @@
 var productArr = [];
 $(document).ready(function () {
   $("#btnSubmit").on("click", function () {
-    var id = document.getElementById("product_id").value;
+    var id =  document.getElementById("product_id").value;
     var name = document.getElementById("product_name").value;
-    var price = document.getElementById("product_price").value;
-    var quantity = document.getElementById("product_quantity").value;
+    var price = parseInt(document.getElementById("product_price").value);
+    var quantity = parseInt(document.getElementById("product_quantity").value);
     var objproduct = {
       id: id,
       name: name,
@@ -37,11 +37,12 @@ function add() {
  
  function addQuantity(q){
      var quant = document.getElementById("quantityIn").value;
+     qI=parseInt(quant);
      var  tprice = document.getElementById("product_price").value;
      for(let i =0 ; i<productArr.length;i++){
          if (productArr[i].quantity == q){
-             productArr[i].quantity = quant ;
-             productArr[i].price = quant*productArr[i].price;
+             productArr[i].quantity += qI ;
+             productArr[i].price = productArr[i].quantity*productArr[i].price;
          }
      }
   add(productArr);
