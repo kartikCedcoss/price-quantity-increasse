@@ -29,7 +29,7 @@ function add() {
       productArr[i].price +
       "</td><td>" +
       productArr[i].quantity +
-      '</td> <td> <input type="text" name="add_Quantity" id="quantityIn" > </td> <td> <input type="button" name="add_Quantity" id="btnSubmitIn" onclick= " addQuantity(' + parseInt(productArr[i].quantity) +')"" value="AddQuantity"></td> </tr>';
+      '</td>  <td> <input type="button" name="add_Quantity" id="btnSubmitIn" onclick= " addQuantity(' + parseInt(productArr[i].quantity) +')"" value="AddQuantity"></td> </tr>';
   }
   html += "</table>";
   document.getElementById("product_list").innerHTML = html;
